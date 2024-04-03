@@ -12,6 +12,7 @@ namespace JoyJab.LoadingSystem {
         
         private const string LoadingSceneName = "LoadingScreen";
 
+        public static bool IsLoading => _loadCoroutine != null;
         private static Coroutine _loadCoroutine;
         
         public static void LoadScene(string sceneName, float delay = 0) {
