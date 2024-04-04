@@ -37,7 +37,7 @@ namespace JoyJab.LoadingSystem {
             float time = 0f;
             while (time < _fadeDuration) {
                 _canvasGroup.alpha = Mathf.Lerp(start, target, time / _fadeDuration);
-                time += Time.deltaTime;
+                time += Time.unscaledDeltaTime;
                 yield return null;
             }
             _canvasGroup.alpha = target;

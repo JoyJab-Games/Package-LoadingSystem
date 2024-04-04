@@ -1,6 +1,6 @@
 {
   "name": "com.joyjab.loading-system",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "displayName": "JoyJab Loading System",
   "description": "Simple ass loading system which just swaps a loading screen in between scene changes",
   "unity": "2022.1",
