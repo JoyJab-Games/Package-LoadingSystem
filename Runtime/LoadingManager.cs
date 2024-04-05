@@ -54,7 +54,7 @@ namespace JoyJab.LoadingSystem {
         private static IEnumerator RemoveLoadingScreen(Scene oldScene) {
             SceneManager.UnloadSceneAsync(oldScene);
             FadeToBlack.FadeOut();
-            yield return new WaitForSeconds(FadeToBlack.FadeDuration);
+            yield return new WaitForSecondsRealtime(FadeToBlack.FadeDuration);
             SceneManager.UnloadSceneAsync(LoadingSceneName);
         }
     }
