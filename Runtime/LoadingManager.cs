@@ -41,11 +41,11 @@ namespace JoyJab.LoadingSystem {
         }
 
         private static IEnumerator LoadNewScene(string sceneName) {
-            float startTime = Time.time;
+            float startTime = Time.unscaledTime;
             AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
             asyncOperation.allowSceneActivation = false;
             yield return new WaitUntil(() => asyncOperation.progress >= 0.9f);
-            while (Time.time - startTime < FadeToBlack.FadeDuration) yield return null;
+            while (Time.unscaledTime - startTime < FadeToBlack.FadeDuration) yield return null;
             asyncOperation.allowSceneActivation = true;
             yield return new WaitUntil(() => asyncOperation.isDone);
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
